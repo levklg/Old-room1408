@@ -41,9 +41,9 @@ const sendMsg = () => {
 }
 
 const showMessage = (message) => {
-    const chatLine = document.getElementById(chatLineElementId);
-    let newRow = chatLine.insertRow(-1);
-    let newCell = newRow.insertCell(0);
-    let newText = document.createTextNode(message);
-    newCell.appendChild(newText);
+     const chatLine = document.getElementById(chatLineElementId);
+     let newRow = chatLine.insertRow(-1);
+     let newCell = newRow.insertCell(0);
+     let newText = document.createTextNode(message);
+     newCell.appendChild(newText);
 }
