@@ -18,19 +18,16 @@ public class DataStoreR2dbc implements DataStore {
     private static final Logger log = LoggerFactory.getLogger(DataStoreR2dbc.class);
     private final MessageRepository messageRepository;
     private final Scheduler workerPool;
-
     public DataStoreR2dbc(Scheduler workerPool, MessageRepository messageRepository) {
         this.workerPool = workerPool;
         this.messageRepository = messageRepository;
     }
-
     @Override
     public Mono<Message> saveMessage(Message message) {
         log.info("saveMessage:{}", message);
         return messageRepository.save(message);
     }
-
-    @Override
+   @Override
     public Flux<Message> loadMessages(String roomId) {
         log.info("loadMessages roomId:{}", roomId);
         return messageRepository.findByRoomId(roomId)
@@ -45,3 +42,4 @@ public class DataStoreR2dbc implements DataStore {
     }
 
 }
+/////
